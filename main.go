@@ -37,12 +37,16 @@ var indexPage []byte
 func main() {
 	cli.InitCli()
 	config.InitConf()
+	// print all config
+	fmt.Println("all config ===>:")
+	fmt.Println(viper.AllSettings())
 	if viper.GetString("log_level") == "debug" {
 		config.Debug = true
+		fmt.Println("debug mode enabled")
 	}
 
 	logger.SetupLogger()
-	logger.SysLog("One Hub " + config.Version + " started")
+	logger.SysLog("91Api " + config.Version + " started")
 
 	// Initialize user token
 	err := common.InitUserToken()

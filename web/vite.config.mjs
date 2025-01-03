@@ -7,6 +7,13 @@ import jsconfigPaths from 'vite-jsconfig-paths';
 // ----------------------------------------------------------------------
 
 export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler' // or "modern"
+      }
+    }
+  },
   plugins: [react(), jsconfigPaths()],
   // https://github.com/jpuri/react-draft-wysiwyg/issues/1317
   //   define: {
@@ -32,7 +39,7 @@ export default defineConfig({
     port: 3010,
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:3000', // 设置代理的目标服务器
+        target: 'http://localhost:3030', // 设置代理的目标服务器
         changeOrigin: true
       }
     }

@@ -45,7 +45,7 @@ func (s *StmpConfig) Send(to, subject, body string) error {
 	message.Subject(subject)
 	message.SetGenHeader("References", s.getReferences())
 	message.SetBodyString(mail.TypeTextHTML, body)
-	message.SetUserAgent(fmt.Sprintf("One Hub %s // https://github.com/MartialBE/one-hub", config.Version))
+	message.SetUserAgent(fmt.Sprintf("91Api %s // https://github.com/MartialBE/one-hub", config.Version))
 
 	client, err := mail.NewClient(
 		s.Host,
@@ -104,11 +104,11 @@ func SendPasswordResetEmail(userName, email, link string) error {
 	<p>
 		您正在进行密码重置。点击下方按钮以重置密码。
 	</p>
-	
+
 	<p style="text-align: center; font-size: 13px;">
 		<a target="__blank" href="%s" class="button" style="color: #ffffff;">重置密码</a>
 	</p>
-	
+
 	<p style="color: #858585; padding-top: 15px;">
 		如果链接无法点击，请尝试点击下面的链接或将其复制到浏览器中打开<br> %s
 	</p>
@@ -129,13 +129,13 @@ func SendVerificationCodeEmail(email, code string) error {
 
 	contentTemp := `
 	<p>
-		您正在进行邮箱验证。您的验证码为: 
+		您正在进行邮箱验证。您的验证码为:
 	</p>
-	
+
 	<p style="text-align: center; font-size: 30px; color: #58a6ff;">
 		<strong>%s</strong>
 	</p>
-	
+
 	<p style="color: #858585; padding-top: 15px;">
 		验证码 %d 分钟内有效，如果不是本人操作，请忽略。
 	</p>`
@@ -157,11 +157,11 @@ func SendQuotaWarningCodeEmail(userName, email string, quota int, noMoreQuota bo
 		<p>
 			%s，当前剩余额度为 %d，为了不影响您的使用，请及时充值。
 		</p>
-		
+
 		<p style="text-align: center; font-size: 13px;">
 			<a target="__blank" href="%s" class="button" style="color: #ffffff;">点击充值</a>
 		</p>
-		
+
 		<p style="color: #858585; padding-top: 15px;">
 			如果链接无法点击，请尝试点击下面的链接或将其复制到浏览器中打开<br> %s
 		</p>`

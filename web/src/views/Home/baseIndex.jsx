@@ -9,7 +9,7 @@ const BaseIndex = () => {
     <Box
       sx={{
         minHeight: 'calc(100vh - 136px)',
-        backgroundImage: 'linear-gradient(to right, #ff9966, #ff5e62)',
+        backgroundImage: 'linear-gradient(to right, #8066ff, #2f56c9)',
         color: 'white',
         p: 4
       }}
@@ -19,7 +19,7 @@ const BaseIndex = () => {
           <Grid md={7} lg={6}>
             <Stack spacing={3}>
               <Typography variant="h1" sx={{ fontSize: '4rem', color: '#fff', lineHeight: 1.5 }}>
-                One Hub
+                91Api
               </Typography>
               <Typography variant="h4" sx={{ fontSize: '1.5rem', color: '#fff', lineHeight: 1.5 }}>
                 {t('description')}

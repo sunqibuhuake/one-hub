@@ -27,6 +27,7 @@ var (
 )
 
 func InitUserToken() error {
+
 	tokenSecret := viper.GetString("user_token_secret")
 	sqidsAlphabet := viper.GetString("hashids_salt")
 

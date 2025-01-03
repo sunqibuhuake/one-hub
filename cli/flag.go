@@ -57,7 +57,7 @@ func InitCli() {
 }
 
 func help() {
-	fmt.Println("One Hub " + config.Version + " - All in one Hub service for OpenAI API.")
+	fmt.Println("91Api " + config.Version + " - All in 91Api service for OpenAI API.")
 	fmt.Println("Copyright (C) 2024 MartialBE. All rights reserved.")
 	fmt.Println("Original copyright holder: JustSong")
 	fmt.Println("GitHub: https://github.com/MartialBE/one-hub")

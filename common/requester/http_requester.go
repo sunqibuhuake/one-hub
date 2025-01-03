@@ -9,6 +9,7 @@ import (
 	"io"
 	"net/http"
 	"one-api/common"
+	"one-api/common/logger"
 	"one-api/common/utils"
 	"one-api/types"
 	"strconv"
@@ -76,6 +77,7 @@ func (r *HTTPRequester) NewRequest(method, url string, setters ...requestOption)
 func (r *HTTPRequester) SendRequest(req *http.Request, response any, outputResp bool) (*http.Response, *types.OpenAIErrorWithStatusCode) {
 	resp, err := HTTPClient.Do(req)
 	if err != nil {
+		logger.SysError(err.Error())
 		return nil, common.ErrorWrapper(err, "http_request_failed", http.StatusInternalServerError)
 	}
 

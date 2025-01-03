@@ -1,4 +1,4 @@
-FROM node:16 as builder
+FROM node:16 AS builder
 
 WORKDIR /build
 COPY web/package.json .
@@ -11,7 +11,8 @@ FROM golang AS builder2
 
 ENV GO111MODULE=on \
     CGO_ENABLED=1 \
-    GOOS=linux
+    GOOS=linux \
+    GOARCH=amd64
 
 WORKDIR /build
 ADD go.mod go.sum ./

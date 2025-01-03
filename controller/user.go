@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"one-api/common"
 	"one-api/common/config"
+	"one-api/common/logger"
 	"one-api/common/utils"
 	"one-api/model"
 	"strconv"
@@ -70,6 +71,7 @@ func setupLogin(user *model.User, c *gin.Context) {
 	session.Set("status", user.Status)
 	err := session.Save()
 	if err != nil {
+		logger.LogError(c, err.Error())
 		c.JSON(http.StatusOK, gin.H{
 			"message": "无法保存会话信息，请重试",
 			"success": false,
